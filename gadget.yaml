@@ -55,3 +55,23 @@ volumes:
         filesystem: ext4
         type: 83,0FC63DAF-8483-4772-8E79-3D69D8477DE4
         size: 1G
+
+defaults: 
+  # edgexfoundry
+  AZGf0KNnh8aqdkbGATNuRuxnt1GNRKkV:
+    device-virtual: "on"
+    # kuiper: "on" # this also enables/starts app-service-configurable with rules-engine profile
+    support-scheduler: "on" 
+    support-notifications: "on"
+    # sys-mgmt-agent: "on" 
+    # env:
+    #   security-proxy:
+    #     # set a default user
+    #     user: "admin,1,ES256"
+    #     public-key: |
+    #       -----BEGIN PUBLIC KEY-----
+    #       MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAETuwPTr5tL/NxiTkUWh2r93i6yaQf
+    #       XiFV8kNjemjuTpOTc6yZu+zgNyt1pXpHmPmtIZ8X4eE0QGCIjlnfAz0dQA==
+    #       -----END PUBLIC KEY-----
+
+
