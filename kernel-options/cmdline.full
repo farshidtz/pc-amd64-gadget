@@ -1,3 +1,5 @@
+# Source: https://forum.snapcraft.io/t/easy-way-to-debug-uc20-install-mode-by-modifying-kernel-command-line/26603
+
 # this is the first serial console, pick a suitable one for your device
 console=ttyS0 
 
