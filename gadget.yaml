@@ -59,19 +59,20 @@ volumes:
 defaults: 
   # edgexfoundry
   AZGf0KNnh8aqdkbGATNuRuxnt1GNRKkV:
+    # Services that should auto start
     device-virtual: "on"
-    # kuiper: "on" # this also enables/starts app-service-configurable with rules-engine profile
     support-scheduler: "on" 
     support-notifications: "on"
+    # Setting kuiper and sys-mgmt-agent to on is not supported during seeding
+    # kuiper: "on" # this also enables/starts app-service-configurable with rules-engine profile
     # sys-mgmt-agent: "on" 
-    # env:
-    #   security-proxy:
-    #     # set a default user
-    #     user: "admin,1,ES256"
-    #     public-key: |
-    #       -----BEGIN PUBLIC KEY-----
-    #       MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAETuwPTr5tL/NxiTkUWh2r93i6yaQf
-    #       XiFV8kNjemjuTpOTc6yZu+zgNyt1pXpHmPmtIZ8X4eE0QGCIjlnfAz0dQA==
-    #       -----END PUBLIC KEY-----
-
-
+    
+    # Note: the following overrides the whole env.security-proxy object rather than just patching it
+    env.security-proxy:
+        # set a default user
+        user: "admin,1,ES256"
+        public-key: |
+          -----BEGIN PUBLIC KEY-----
+          MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAETuwPTr5tL/NxiTkUWh2r93i6yaQf
+          XiFV8kNjemjuTpOTc6yZu+zgNyt1pXpHmPmtIZ8X4eE0QGCIjlnfAz0dQA==
+          -----END PUBLIC KEY-----

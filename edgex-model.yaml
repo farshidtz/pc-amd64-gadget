@@ -1,11 +1,6 @@
 # We'll use YAML serialization for the model, because everything else here is YAML!
 # Moreover, YAML allows us to comment and quickly switch to different settings.
-#
-# We need to convert it to JSON before signing:
-# Install yq if you don’t already have it:
-# $ sudo snap install yq
-# Sign:
-# $ yq eval edgex-model.yaml -o=json | snap sign -k edgex-demo > edgex-model-signed.yaml
+# We need to convert it to JSON before signing.
 
 type: model
 series: '16'
@@ -51,12 +46,11 @@ snaps:
 - 
   name: edgexfoundry
   type: app
-  default-channel: 2.1/stable
-  # default-channel: latest/edge/gadget-debug
+  # default-channel: latest/stable
+  default-channel: latest/edge/gadget-debug
   id: AZGf0KNnh8aqdkbGATNuRuxnt1GNRKkV
 # -
 #   name: edgex-ui
 #   type: app
-#   # presence: optional
 #   default-channel: 2.1/stable
 #   id: 9XP2uICRioP5xd6YrpXhP5g4x8XlO5D1
