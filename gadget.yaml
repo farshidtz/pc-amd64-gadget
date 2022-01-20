@@ -56,6 +56,7 @@ volumes:
         type: 83,0FC63DAF-8483-4772-8E79-3D69D8477DE4
         size: 1G
 
+# Add default config options
 defaults: 
   # edgexfoundry
   AZGf0KNnh8aqdkbGATNuRuxnt1GNRKkV:
@@ -69,8 +70,10 @@ defaults:
     
     # Note: the following overrides the whole env.security-proxy object rather than just patching it
     env.security-proxy:
-        # set a default user
+        # Set a default user
+        # name: admin, id: 1, signing algorithm: ES256
         user: "admin,1,ES256"
+        # public key of that user
         public-key: |
           -----BEGIN PUBLIC KEY-----
           MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAETuwPTr5tL/NxiTkUWh2r93i6yaQf

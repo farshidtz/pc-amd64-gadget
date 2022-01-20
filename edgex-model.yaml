@@ -1,11 +1,11 @@
-# We'll use YAML serialization for the model, because everything else here is YAML!
+# We use YAML serialization for the model, because everything else here is YAML!
 # Moreover, YAML allows us to comment and quickly switch to different settings.
 # We need to convert it to JSON before signing.
 
 type: model
 series: '16'
 
-# authority-id and brand-id are set to our developer-id
+# authority-id and brand-id must be set to your developer-id
 authority-id: SZ4OfFv8DVM9om64iYrgojDLgbzI0eiL
 brand-id: SZ4OfFv8DVM9om64iYrgojDLgbzI0eiL
 
@@ -16,7 +16,7 @@ architecture: amd64
 timestamp: '2021-12-14T10:45:00+00:00'
 base: core20
 
-# grade is set to dangerous because the gadget is not signed and fetched from the store
+# grade is set to dangerous because the gadget is not signed nor from the store
 grade: dangerous
 
 snaps:
@@ -34,6 +34,7 @@ snaps:
   default-channel: 20/stable
   id: pYVQrBcKmBa0mZ4CCN7ExT6jH8rY1hza
 - 
+  # Add core18 because edgexfoundry uses that base
   name: core18
   type: base
   default-channel: latest/stable
@@ -49,8 +50,8 @@ snaps:
   # default-channel: latest/stable
   default-channel: latest/edge/gadget-debug
   id: AZGf0KNnh8aqdkbGATNuRuxnt1GNRKkV
-# -
-#   name: edgex-ui
-#   type: app
-#   default-channel: 2.1/stable
-#   id: 9XP2uICRioP5xd6YrpXhP5g4x8XlO5D1
+-
+  name: edgex-ui
+  type: app
+  default-channel: 2.1/stable
+  id: 9XP2uICRioP5xd6YrpXhP5g4x8XlO5D1
