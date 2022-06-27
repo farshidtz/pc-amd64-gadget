@@ -60,8 +60,13 @@ volumes:
 defaults:
   # edgex-device-mqtt
   AeVDP4oaKGCL9fT0u7lbNKxupwXrGiMX:
+    # automatically start the service
     autostart: true
 
 connections:
-   -  plug: AeVDP4oaKGCL9fT0u7lbNKxupwXrGiMX:device-config
+   -  # Connect edgex-device-mqtt's plug (consumer) to
+      #   edgex-demo-ambient-sensing-config's slot (provider) to override the
+      #   default configuration files by bind-mounting provider's "res" directory
+      #   on top of the provider's "res" directory.
+      plug: AeVDP4oaKGCL9fT0u7lbNKxupwXrGiMX:device-config
       slot: 5riI41SdX1gJYFdFXC5eoKzzBUEzSgqq:device-config
