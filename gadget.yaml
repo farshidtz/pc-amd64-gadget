@@ -63,9 +63,13 @@ defaults:
     # Disable EdgeX security
     # By default, the security components are enabled and external access is only
     # permitted to authenticated users, through the API Gateway.
-    security: off
+    security-secret-store: off
+    # Enable EdgeX 2.2 snap options syntax
+    app-options: true
     # Change the bind address of all EdgeX components to listen on all interfaces.
-    # By default, this is set to 127.0.0.1 (loopback interface), which will prevent # accesping external connections to unprotected endpoints.
+    # By default, this is set to 127.0.0.1 (loopback interface), which make the
+    # internal servers to accept local connections only. This change will open
+    # external access to unprotected endpoints! This is only for demonstration.
     config.service-serverbindaddr: 0.0.0.0
 
   AmKuVTOfsN0uEKsyJG34M8CaMfnIqxc0: # edgex-device-virtual
