@@ -59,11 +59,12 @@ volumes:
 # Add default config options
 # The child keys are unique snap IDs
 defaults:
-  AZGf0KNnh8aqdkbGATNuRuxnt1GNRKkV: # edgexfoundry
+  # edgexfoundry
+  AZGf0KNnh8aqdkbGATNuRuxnt1GNRKkV:
     # Disable EdgeX security
     # By default, the security components are enabled and external access is only
     # permitted to authenticated users, through the API Gateway.
-    security-secret-store: off
+    security-secret-store: "off"
     # Enable EdgeX 2.2 snap options syntax
     app-options: true
     # Change the bind address of all EdgeX components to listen on all interfaces.
@@ -72,7 +73,8 @@ defaults:
     # external access to unprotected endpoints! This is only for demonstration.
     config.service-serverbindaddr: 0.0.0.0
 
-  AmKuVTOfsN0uEKsyJG34M8CaMfnIqxc0: # edgex-device-virtual
+  # edgex-device-virtual
+  AmKuVTOfsN0uEKsyJG34M8CaMfnIqxc0:
     # automatically start the service
     autostart: true
     # Enable app options
