@@ -92,3 +92,8 @@ parts:
       - grub.conf
       - pc-boot.img
       - pc-core.img
+
+  # Add kernel options for extended logging and a debugging shell  
+  # kernel-options:
+  #   source: kernel-options/
+  #   plugin: dump
