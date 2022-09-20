@@ -75,12 +75,17 @@ defaults:
 
   # edgex-device-virtual
   AmKuVTOfsN0uEKsyJG34M8CaMfnIqxc0:
-    # automatically start the service
+    # Automatically start the service
     autostart: true
-    # Enable app options
-    app-options: true # not necessary because this service has it by default
-    # Disable EdgeX security
+    # Do not use EdgeX Secret Store
     config.edgex-security-secret-store: false
     # Override the startup message (because we can)
     # The same syntax can be used to override most of the server configurations
     apps.device-virtual.config.service-startupmsg: "Startup message from gadget!"
+
+  # edgex-ui
+  9XP2uICRioP5xd6YrpXhP5g4x8XlO5D1:
+    # Automatically start the service
+    autostart: true
+    # Do not use EdgeX Secret Store
+    config.edgex-security-secret-store: false
